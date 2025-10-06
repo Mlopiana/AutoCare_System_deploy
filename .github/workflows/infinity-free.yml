@@ -19,8 +19,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftpupload.net # Change if using another host
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          username: ${{ if0_40100418 }}
+          password: ${{ MarkedUplangu3 }}
           server-dir: /aurocare.infinityfree.me/htdocs/ # Replace with your correct path
           timeout: 86400000
           log-level: standard
