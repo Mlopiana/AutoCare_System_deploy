@@ -1,9 +1,10 @@
 name: 🚀 aurocare.infinityfree.me
 
-  push:
-    branches:
-      - main
-  workflow_dispatch: 
+  on:
+  workflow_dispatch: # Uncomment below to deploy on push instead
+   push:
+     branches:
+       - main
 
 jobs:
   deploy:
