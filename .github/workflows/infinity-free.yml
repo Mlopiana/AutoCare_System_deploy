@@ -1,26 +1,26 @@
-name: 🚀 aurocare.infinityfree.me
+name: "🚀 aurocare.infinityfree.me"
 
-  on:
-  workflow_dispatch: # Uncomment below to deploy on push instead
-   push:
-     branches:
-       - main
+on:
+  workflow_dispatch:  # Allows manual run
+  push:               # Automatically runs when you push to main
+    branches:
+      - main
 
 jobs:
   deploy:
-    name: 🎉 Deploy to your_domain
+    name: "🎉 Deploy to your_domain"
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
+      - name: "🚚 Get latest code"
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files via FTP
+      - name: "📂 Sync files via FTP"
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftpupload.net # Change if using another host
-          username: ${{ secrets. FTP_USERNAME }}
-          password: ${{ secrets. FTP_PASSWORD }}
-          server-dir: /aurocare.infinityfree.me/htdocs/ # Replace with your correct path
+          server: ftpupload.net  # Change if using another host
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /aurocare.infinityfree.me/htdocs/  # Replace with your correct path
           timeout: 86400000
           log-level: standard
